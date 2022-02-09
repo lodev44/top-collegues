@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-avis',
@@ -8,15 +8,24 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class AvisComponent implements OnInit {
 
   @Output() donnerUnAvisEvt = new EventEmitter<number>();
-
+  @Input() score: number | undefined;
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log("score",this.score);
   }
 
-  donnerUnavis(score:number) {
+  donnerUnavis(score: number) {
     this.donnerUnAvisEvt.emit(score);
   }
 
+  desactiverBoutonAimer(){
+
+    return this.score!=undefined && this.score>=1000 ? true : false;
+  }
+
+  desactiverBoutonDetester(){
+    return this.score!=undefined && this.score<=-1000 ? true : false;
+  }
 }

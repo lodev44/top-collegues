@@ -1,10 +1,20 @@
 <div id="avis" class="m-5">
   <div class="row text-center">
     <div class="col-6">
-      <button type="button" class="btn btn-dark text-center" (click)="donnerUnavis(100)">J'aime</button>
+      <button
+      type="button"
+      class="btn btn-dark text-center"
+      [disabled]="desactiverBoutonAimer()"
+      (click)="donnerUnavis(100)">J'aime
+    </button>
     </div>
     <div class="col-6">
-      <button type="button" class="btn btn-dark text-center" (click)="donnerUnavis(-100)">Je déteste</button>
+      <button
+      type="button"
+      class="btn btn-dark text-center"
+      (click)="donnerUnavis(-100)"
+      [disabled]="desactiverBoutonDetester()" >
+      Je déteste</button>
     </div>
   </div>
 </div>
