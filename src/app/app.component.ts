@@ -9,5 +9,5 @@ import { Collegue } from './modele';
 })
 export class AppComponent {
   title = 'top-collegues';
-  colleguesToDisplay:Collegue[] = exempleCollegues;
+
 }
