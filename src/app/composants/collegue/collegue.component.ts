@@ -12,6 +12,12 @@ export class CollegueComponent implements OnInit {
 
 
   @Input() collegue?: Collegue;
+
+  prendreEnCompteAvis(points:number){
+    if(this.collegue){
+      this.collegue.score+=points;
+    }
+  }
   constructor() { }
 
 
