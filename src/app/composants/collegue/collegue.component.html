@@ -1,4 +1,4 @@
-<div id="collegue" class="m-3 p-3">
+<div id="collegue" class="m-3 p-3" *ngIf="collegue;else noCollegue">
 
   <div class="row">
     <div class="col-3"></div>
@@ -10,13 +10,13 @@
 
   <div class="row mt-3">
     <div class="col-3"></div>
-    <div class="col-6  text-center">pseudo</div>
+    <div class="col-6  text-center">{{collegue.pseudo}}</div>
     <div class="col-3"></div>
   </div>
 
   <div class="row mt-3">
     <div class="col-3"></div>
-    <div class="col-6 text-center">score</div>
+    <div class="col-6 text-center">{{collegue.score}}</div>
     <div class="col-3"></div>
   </div>
 
@@ -28,3 +28,6 @@
     <div class="col-3"></div>
   </div>
 </div>
+<ng-template #noCollegue>
+  <h1 class="alert alert-danger">Aucun collegue définit</h1>
+</ng-template>

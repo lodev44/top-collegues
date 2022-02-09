@@ -1,5 +1,7 @@
-import { Collegue } from './../../collegue';
+
 import { Component, OnInit, Input } from '@angular/core';
+import { isNull } from '@angular/compiler/src/output/output_ast';
+import { Collegue } from 'src/app/modele';
 
 @Component({
   selector: 'app-collegue',
@@ -8,8 +10,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CollegueComponent implements OnInit {
 
+
+  @Input() collegue?: Collegue;
   constructor() { }
-//@Input() collegue:Collegue;
+
+
   ngOnInit(): void {
   }
 
