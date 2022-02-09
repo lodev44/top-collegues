@@ -13,17 +13,17 @@ export const exempleCollegues = [
     photoUrl: "https://www.fanactu.com/medias/shaun-le-mouton---le-film-nouvelle-bande-annonce_5866/shaun-le-mouton---le-film-nouvelle-bande-annonce-desktop-175233.jpg"
   },
   {
-    pseudo: "Bitzer (le chien)",
+    pseudo: "Bitzer",
     score: 100,
     photoUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.3BfHsF1N8BEE4C9pNenMMQHaEK%26pid%3DApi&f=1"
   },
   {
-    pseudo: "Shirley  (Gros mouton)",
+    pseudo: "Shirley",
     score: 200,
     photoUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.c72eOObLFUGrKKewdKXUkgHaEK%26pid%3DApi&f=1"
   },
   {
-    pseudo: "Timmy   (Agneau)",
+    pseudo: "Timmy",
     score: 300,
     photoUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.32UQvu0-Jb4zuuITmq1lcgHaEK%26pid%3DApi&f=1"
   },
