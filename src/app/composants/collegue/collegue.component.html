@@ -1,31 +1,16 @@
 <div id="collegue" class="m-3 p-3" *ngIf="collegue;else noCollegue">
+  <img [src]="collegue.photoUrl" class="card-img-top" alt="Photo du personnage">
+  <div class="card-body">
+    <h5 class="card-title">{{collegue.pseudo}}</h5>
 
-  <div class="row">
-    <div class="col-3"></div>
-    <div class="col-6  text-center"><img
-        src="https://www.fanactu.com/medias/shaun-le-mouton---le-film-nouvelle-bande-annonce_5866/shaun-le-mouton---le-film-nouvelle-bande-annonce-desktop-175233.jpg"
-        width="500"></div>
-    <div class="col-3"></div>
-  </div>
-
-  <div class="row mt-3">
-    <div class="col-3"></div>
-    <div class="col-6  text-center">{{collegue.pseudo}}</div>
-    <div class="col-3"></div>
-  </div>
-
-  <div class="row mt-3">
-    <div class="col-3"></div>
-    <div class="col-6 text-center">{{collegue.score}}</div>
-    <div class="col-3"></div>
-  </div>
-
-  <div class="row m-5">
-    <div class="col-3"></div>
-    <div class="col-6">
-      <app-avis  (donnerUnAvisEvt)="prendreEnCompteAvis($event)" [score]="collegue.score"></app-avis>
-    </div>
-    <div class="col-3"></div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item texte-center mx-auto">
+        Score : {{collegue.score}}
+      </li>
+      <li class="list-group-item texte-center">
+        <app-avis (donnerUnAvisEvt)="prendreEnCompteAvis($event)" [score]="collegue.score"></app-avis>
+      </li>
+    </ul>
   </div>
 </div>
 <ng-template #noCollegue>

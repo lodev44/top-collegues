@@ -1,0 +1,9 @@
+<h1 class="text-center m-5 p-2">Shown academy</h1>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col" *ngFor="let obj of collegues">
+    <div class="card">
+      <app-collegue [collegue]="obj" ></app-collegue>
+    </div>
+  </div>
+</div>

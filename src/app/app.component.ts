@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { exempleCollegue } from './data';
+import { exempleCollegue, exempleCollegues } from './data';
 import { Collegue } from './modele';
 
 @Component({
@@ -9,5 +9,5 @@ import { Collegue } from './modele';
 })
 export class AppComponent {
   title = 'top-collegues';
-  collegueToDisplay:Collegue = exempleCollegue;
+  colleguesToDisplay:Collegue[] = exempleCollegues;
 }
