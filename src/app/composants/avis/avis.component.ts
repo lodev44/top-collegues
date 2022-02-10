@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Avis } from 'src/app/modele';
 
 @Component({
   selector: 'app-avis',
@@ -13,19 +14,22 @@ export class AvisComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log("score",this.score);
+    console.log("score", this.score);
   }
 
-  donnerUnavis(score: number) {
-    this.donnerUnAvisEvt.emit(score);
+  aimer() {
+    this.donnerUnAvisEvt.emit(Avis.AIMER);
+  }
+  detester() {
+    this.donnerUnAvisEvt.emit(Avis.DETESTER);
   }
 
-  desactiverBoutonAimer(){
+  desactiverBoutonAimer() {
 
-    return this.score!=undefined && this.score>=1000 ? true : false;
+    return this.score != undefined && this.score >= 1000 ? true : false;
   }
 
-  desactiverBoutonDetester(){
-    return this.score!=undefined && this.score<=-1000 ? true : false;
+  desactiverBoutonDetester() {
+    return this.score != undefined && this.score <= -1000 ? true : false;
   }
 }

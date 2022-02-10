@@ -1,3 +1,4 @@
+import { Avis } from './../../modele';
 
 import { Component, OnInit, Input } from '@angular/core';
 import { isNull } from '@angular/compiler/src/output/output_ast';
@@ -13,9 +14,9 @@ export class CollegueComponent implements OnInit {
 
   @Input() collegue?: Collegue;
 
-  prendreEnCompteAvis(points:number){
+  prendreEnCompteAvis(avis:Avis){
     if(this.collegue){
-      this.collegue.score+=points;
+      (avis === Avis.AIMER)?this.collegue.score+=100:this.collegue.score-=100;
     }
   }
   constructor() { }

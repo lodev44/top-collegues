@@ -5,14 +5,14 @@
       type="button"
       class="btn btn-dark text-center"
       [disabled]="desactiverBoutonAimer()"
-      (click)="donnerUnavis(100)">J'aime
+      (click)="aimer()">J'aime
     </button>
     </div>
     <div class="col-6">
       <button
       type="button"
       class="btn btn-dark text-center"
-      (click)="donnerUnavis(-100)"
+      (click)="detester()"
       [disabled]="desactiverBoutonDetester()" >
       Je déteste</button>
     </div>
