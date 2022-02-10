@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { exempleCollegues } from 'src/app/data';
 import { Collegue } from 'src/app/modele';
 
 @Component({
@@ -8,7 +9,10 @@ import { Collegue } from 'src/app/modele';
 })
 export class ListeColleguesComponentComponent implements OnInit {
 
-  @Input() collegues?: Collegue[];
+  //@Input() collegues?: Collegue[];
+  // On a pas besoin de récupérer la liste depuis un autre composant
+  // Le composant peut héberger la liste.
+  colleguesToDisplay:Collegue[] = exempleCollegues;
   constructor() { }
 
   ngOnInit(): void {

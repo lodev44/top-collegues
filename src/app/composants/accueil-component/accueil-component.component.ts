@@ -8,7 +8,7 @@ import { Collegue } from 'src/app/modele';
   styleUrls: ['./accueil-component.component.scss']
 })
 export class AccueilComponentComponent implements OnInit {
-  colleguesToDisplay:Collegue[] = exempleCollegues;
+
   constructor() { }
 
   ngOnInit(): void {
