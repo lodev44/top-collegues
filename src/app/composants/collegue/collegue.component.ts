@@ -1,3 +1,4 @@
+import { DataService } from './../../services/data.service';
 import { Avis } from './../../modele';
 
 import { Component, OnInit, Input } from '@angular/core';
@@ -11,18 +12,18 @@ import { Collegue } from 'src/app/modele';
 })
 export class CollegueComponent implements OnInit {
 
-
   @Input() collegue?: Collegue;
 
-  prendreEnCompteAvis(avis:Avis){
-    if(this.collegue){
-      (avis === Avis.AIMER)?this.collegue.score+=100:this.collegue.score-=100;
+  constructor(private serviceData: DataService) { }
+  prendreEnCompteAvis(avis: Avis) {
+    if (this.collegue) {
+      this.serviceData.donnerUnAvis(this.collegue, avis)
+        .subscribe(data => {
+          this.collegue = data;
+        });
     }
   }
-  constructor() { }
-
 
   ngOnInit(): void {
   }
-
 }
