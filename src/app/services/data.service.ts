@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Avis, Collegue } from '../modele';
+import { Avis, Collegue, Vote } from '../modele';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +23,9 @@ export class DataService {
       "pseudo": collegue.pseudo
     },
     {'headers':headers})
+  }
+
+  listerVotes(): Observable<Vote[]> {
+    return this.http.get<Vote[]>("https://formation-angular-collegues.herokuapp.com/api/v1/votes");
   }
 }

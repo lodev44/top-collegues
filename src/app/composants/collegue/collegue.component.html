@@ -1,5 +1,5 @@
-<div id="collegue" class="m-3 p-3" *ngIf="collegue;else noCollegue">
-  <img [src]="collegue.photoUrl" class="card-img-top" alt="Photo du personnage">
+<div id="collegue" class="m-1" *ngIf="collegue;else noCollegue">
+  <img [src]="collegue.photo" class="card-img-top" alt="Photo du personnage">
   <div class="card-body">
     <h5 class="card-title">{{collegue.pseudo | uppercase}}</h5>
 

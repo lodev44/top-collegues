@@ -1,0 +1,16 @@
+<h4 class="mb-3 ms-3">Historique des votes</h4>
+<div class="card mb-3"  *ngFor="let vote of listeVotes;let i=index">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [src]="vote.collegue.photo" class="img-fluid rounded-start" alt="Photo du collegue">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{vote.collegue.prenom}}</h5>
+        <p class="card-text">{{vote|scoreDetail}} </p>
+        <button type="button" class="btn btn-dark text-center btn-sm" (click)="suprimerVote(i)">Supprimer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

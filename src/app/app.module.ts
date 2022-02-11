@@ -8,6 +8,8 @@ import { ListeColleguesComponentComponent } from './composants/liste-collegues-c
 import { AccueilComponentComponent } from './composants/accueil-component/accueil-component.component';
 import { ScorePipe } from './pipes/score.pipe';
 import { HttpClientModule} from '@angular/common/http';
+import { HistoriqueVotesComponent } from './composants/historique-votes/historique-votes.component';
+import { ScoreDetailPipe } from './pipes/score-detail.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HttpClientModule} from '@angular/common/http';
     CollegueComponent,
     ListeColleguesComponentComponent,
     AccueilComponentComponent,
-    ScorePipe
+    ScorePipe,
+    HistoriqueVotesComponent,
+    ScoreDetailPipe
   ],
   imports: [
     BrowserModule,
