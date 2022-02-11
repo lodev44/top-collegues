@@ -1,0 +1,30 @@
+<div>
+  <form #etatForm="ngForm">
+    <div class="mb-3">
+      <label for="pseudo" class="form-label">Pseudo</label>
+      <input type="text" class="form-control" id="pseudo" name="pseudo" [(ngModel)]="collegue.pseudo" required>
+    </div>
+    <div class="mb-3">
+      <label for="nom" class="form-label">Nom</label>
+      <input #etatNom="ngModel" type="text" class="form-control" id="nom" name="nom" [(ngModel)]="collegue.nom" required
+        minlength="2">
+      <div *ngIf="etatNom.dirty && etatNom.invalid" id="pseudoError" class="form-text bg-warning text-dark"
+        style="max-width: 540px;">
+        Le champs doit contenir minimum 2 caractères</div>
+    </div>
+    <div class="mb-3 ">
+      <label for="prenom" class="form-label">Prénom</label>
+      <input #etatPreNom="ngModel" type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="collegue.prenom" required
+        minlength="2">
+      <div *ngIf="etatPreNom.dirty && etatPreNom.invalid" id="pseudoError" class="form-text bg-warning text-dark m-2"
+        style="max-width: 540px;">
+        Le champs doit contenir minimum 2 caractères</div>
+    </div>
+    <div class="mb-3 ">
+      <label for="photo" class="form-label">Photo URL</label>
+      <input type="text" class="form-control" id="photo" [(ngModel)]="collegue.photo" name="photo" required>
+    </div>
+    <button (click)="valider()" class="btn btn-primary" [disabled]="etatForm.invalid">
+      Ajouter</button>
+  </form>
+</div>

@@ -14,6 +14,13 @@ export class DataService {
     return this.http.get<Collegue[]>("https://formation-angular-collegues.herokuapp.com/api/v1/collegues");
   }
 
+ajouterCollegue(collegue :Partial <Collegue>):  Observable<Collegue> {
+  return this.http.post<Collegue>("https://formation-angular-collegues.herokuapp.com/api/v1/collegues",
+  collegue
+  );
+}
+
+
   donnerUnAvis(collegue: Collegue, avis: Avis): Observable<Collegue> {
    console.log("donnerUnAvis");
     const headers={'content-type':'application/json'};
