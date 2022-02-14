@@ -17,6 +17,6 @@ export class NomPrenomValidatorDirective {
     console.log("nom",control.value.nom);
     console.log("prenom",control.value.prenom);
     console.log(control.value.nom === control.value.prenom);
-    return control.value.nom === control.value.prenom ? { nomPrenomIdentique: true }:{ nomPrenomIdentique: false };
+    return control.value.nom === control.value.prenom ? { nomPrenomIdentique: true }:null;
   }
 }

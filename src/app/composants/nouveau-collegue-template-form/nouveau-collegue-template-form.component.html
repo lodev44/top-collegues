@@ -19,7 +19,7 @@
       <div *ngIf="etatPreNom.dirty && etatPreNom.invalid" id="pseudoError"
         class="form-text bg-danger text-dark m-2 p-2 rounded-3" style="max-width: 350px;">
         Le champs doit contenir minimum 2 caractères</div>
-      <div *ngIf="etatPreNom.dirty && etatForm.invalid" class="form-text bg-danger text-dark m-2 p-2 rounded-3"
+      <div *ngIf="etatPreNom.dirty && etatForm.errors && etatForm.errors['nomPrenomIdentique']" class="form-text bg-danger text-dark m-2 p-2 rounded-3"
         style="max-width: 350px;">
         Le nom et le prénom ne peuvent être identique<br>
         {{etatForm.invalid}}</div>
