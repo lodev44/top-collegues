@@ -1,6 +1,7 @@
 import { Collegue } from './../../modele';
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nouveau-collegue-template-form',
@@ -9,7 +10,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class NouveauCollegueTemplateFormComponent implements OnInit {
 
-  constructor(private serviceData: DataService) {
+  constructor(private serviceData: DataService,private router: Router) {
 
   }
 
@@ -19,7 +20,13 @@ export class NouveauCollegueTemplateFormComponent implements OnInit {
 
   valider() {
     console.log("Log - valider formulaire création collegue");
-    this.serviceData.ajouterCollegue(this.collegue).subscribe(data=>console.log(data))
+    this.serviceData.ajouterCollegue(this.collegue)
+    .subscribe(data=>{
+      console.log(data);
+      this.router.navigateByUrl('/accueil');
+    }
+    );
+
   }
 
 }

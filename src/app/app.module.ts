@@ -18,12 +18,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { DetailCollegueComponent } from './composants/detail-collegue/detail-collegue.component';
 
 const routerConfig:Routes = [
-  {path: '', component: AccueilComponentComponent},
+  {path: 'accueil', component: AccueilComponentComponent},
   {path: 'collegues', component: AccueilComponentComponent},
   {path: 'form-template', component: NouveauCollegueTemplateFormComponent},
   {
     path: 'collegues/:pseudo', component: DetailCollegueComponent
-  }
+  },
+  { path: '', pathMatch: 'full', redirectTo: '/accueil'}
 ];
 
 @NgModule({
