@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-3"></div>
+  <div class="col-6">
+    <div id="collegue" class=" m-1" *ngIf="collegue;else noCollegue">
+      <div class="card text-center">
+        <div class="card-body">
+          <img [src]="collegue.photo" class="mx-auto" style="width: 300px;" alt="Photo du personnage">
+          <h5 class="card-title m-3">{{collegue.pseudo | uppercase}}</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item texte-center mx-auto">
+              Score : {{collegue.score | score}}
+            </li>
+            <li class="list-group-item texte-center mx-auto">
+              {{collegue.nom}}
+              {{collegue.prenom}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <ng-template #noCollegue>
+      <h1 class="alert alert-danger">Aucun collegue définit pour le pseudo demandé</h1>
+    </ng-template>
+  </div>
+  <div class="col-3"></div>
+</div>

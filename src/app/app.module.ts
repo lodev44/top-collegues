@@ -15,11 +15,15 @@ import { NouveauCollegueTemplateFormComponent } from './composants/nouveau-colle
 import { NomPrenomValidatorDirective } from './validators/nom-prenom-validator.directive';
 import { MenuComponentComponent } from './composants/menu-component/menu-component.component';
 import { RouterModule, Routes } from '@angular/router';
+import { DetailCollegueComponent } from './composants/detail-collegue/detail-collegue.component';
 
 const routerConfig:Routes = [
   {path: '', component: AccueilComponentComponent},
   {path: 'collegues', component: AccueilComponentComponent},
-  {path: 'form-template', component: NouveauCollegueTemplateFormComponent}
+  {path: 'form-template', component: NouveauCollegueTemplateFormComponent},
+  {
+    path: 'collegues/:pseudo', component: DetailCollegueComponent
+  }
 ];
 
 @NgModule({
@@ -35,6 +39,7 @@ const routerConfig:Routes = [
     NouveauCollegueTemplateFormComponent,
     NomPrenomValidatorDirective,
     MenuComponentComponent,
+    DetailCollegueComponent,
   ],
   imports: [
     BrowserModule,

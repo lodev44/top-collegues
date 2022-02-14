@@ -4,6 +4,9 @@ import { Avis } from './../../modele';
 import { Component, OnInit, Input } from '@angular/core';
 import { isNull } from '@angular/compiler/src/output/output_ast';
 import { Collegue } from 'src/app/modele';
+import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-collegue',
@@ -14,7 +17,11 @@ export class CollegueComponent implements OnInit {
 
   @Input() collegue?: Collegue;
 
-  constructor(private serviceData: DataService) { }
+  constructor(private serviceData: DataService) {
+
+  }
+
+
   prendreEnCompteAvis(avis: Avis) {
     if (this.collegue) {
       this.serviceData.donnerUnAvis(this.collegue, avis)
@@ -25,5 +32,6 @@ export class CollegueComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 }

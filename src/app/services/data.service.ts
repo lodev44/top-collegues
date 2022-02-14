@@ -14,22 +14,26 @@ export class DataService {
     return this.http.get<Collegue[]>("https://formation-angular-collegues.herokuapp.com/api/v1/collegues");
   }
 
-ajouterCollegue(collegue :Partial <Collegue>):  Observable<Collegue> {
-  return this.http.post<Collegue>("https://formation-angular-collegues.herokuapp.com/api/v1/collegues",
-  collegue
-  );
-}
+  ajouterCollegue(collegue: Partial<Collegue>): Observable<Collegue> {
+    return this.http.post<Collegue>("https://formation-angular-collegues.herokuapp.com/api/v1/collegues",
+      collegue
+    );
+  }
+
+  findByPseudo(pseudo: string): Observable<Collegue> {
+    return this.http.get<Collegue>("https://formation-angular-collegues.herokuapp.com/api/v1/collegues/" + pseudo);
+  }
 
 
   donnerUnAvis(collegue: Collegue, avis: Avis): Observable<Collegue> {
-   console.log("Log - DataService - DonnerUnAvis");
-    const headers={'content-type':'application/json'};
+    console.log("Log - DataService - DonnerUnAvis");
+    const headers = { 'content-type': 'application/json' };
     return this.http.post<Collegue>("https://formation-angular-collegues.herokuapp.com/api/v1/votes",
-    {
-      "avis": avis,
-      "pseudo": collegue.pseudo
-    },
-    {'headers':headers})
+      {
+        "avis": avis,
+        "pseudo": collegue.pseudo
+      },
+      { 'headers': headers })
   }
 
   listerVotes(): Observable<Vote[]> {
