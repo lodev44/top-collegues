@@ -12,7 +12,6 @@ export class HistoriqueVotesComponent implements OnInit {
   listeVotes: Vote[] = [];
   constructor(private serviceData: DataService) {
     this.serviceData.listerVotes().subscribe(datas => {
-      console.log(datas);
       this.listeVotes = datas;
     });
   }
@@ -21,7 +20,7 @@ export class HistoriqueVotesComponent implements OnInit {
   }
 
   suprimerVote(index: number) {
-    console.log("supprimer vote");
+    console.log("Log - supprimer vote");
     this.listeVotes.splice(index, 1);
   }
 }

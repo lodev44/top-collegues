@@ -22,7 +22,7 @@ ajouterCollegue(collegue :Partial <Collegue>):  Observable<Collegue> {
 
 
   donnerUnAvis(collegue: Collegue, avis: Avis): Observable<Collegue> {
-   console.log("donnerUnAvis");
+   console.log("Log - DataService - DonnerUnAvis");
     const headers={'content-type':'application/json'};
     return this.http.post<Collegue>("https://formation-angular-collegues.herokuapp.com/api/v1/votes",
     {

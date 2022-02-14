@@ -18,7 +18,7 @@ export class NouveauCollegueTemplateFormComponent implements OnInit {
   }
 
   valider() {
-    console.log("valider");
+    console.log("Log - valider formulaire création collegue");
     this.serviceData.ajouterCollegue(this.collegue).subscribe(data=>console.log(data))
   }
 

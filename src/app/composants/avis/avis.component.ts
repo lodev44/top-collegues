@@ -14,7 +14,6 @@ export class AvisComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log("score", this.score);
   }
 
   aimer() {
